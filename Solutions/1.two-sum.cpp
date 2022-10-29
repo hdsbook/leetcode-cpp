@@ -46,7 +46,7 @@ public:
 
 
 // Test fixture
-class TwoSumTests : public ::testing::TestWithParam<tuple<vector<int>, int, vector<int>>>
+class test_fixture_1 : public ::testing::TestWithParam<tuple<vector<int>, int, vector<int>>>
 {
 protected:
     // ViolentSolution sut;
@@ -55,7 +55,7 @@ protected:
 
 
 // Test Method
-TEST_P(TwoSumTests, TestName)
+TEST_P(test_fixture_1, TestName)
 {
     // given
     auto params = GetParam();
@@ -73,8 +73,8 @@ TEST_P(TwoSumTests, TestName)
 
 // Test Cases
 INSTANTIATE_TEST_CASE_P(
-    TwoSumTestCases,
-    TwoSumTests,
+    TestCases,
+    test_fixture_1,
     ::testing::Values(
         make_tuple(vector<int> {2, 7, 11, 15}, 9, vector<int> {0, 1}),
         make_tuple(vector<int> {3, 2, 4}, 6, vector<int> {1, 2})
