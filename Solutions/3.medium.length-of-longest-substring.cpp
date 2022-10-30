@@ -50,7 +50,7 @@ protected:
 
 
 // Test Method
-TEST_P(test_fixture_3, solve_test)
+TEST_P(test_fixture_3, solution_test)
 {
     // given 測資
     auto params = GetParam();
