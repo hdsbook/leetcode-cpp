@@ -50,23 +50,23 @@ class test_fixture_1 : public ::testing::TestWithParam<tuple<vector<int>, int, v
 {
 protected:
     // ViolentSolution sut;
-    Solution sut;
+    Solution sut; // system under test (SUT) 待測物件
 };
 
 
 // Test Method
-TEST_P(test_fixture_1, TestName)
+TEST_P(test_fixture_1, solve_test)
 {
-    // given
+    // given 測資
     auto params = GetParam();
     vector<int> nums = get<0>(params);
     auto target = get<1>(params);
     auto expected = get<2>(params);
 
-    // when
+    // when 執行 solution
     auto result = sut.twoSum(nums, target);
 
-    // then
+    // then 驗證結果正確
     ASSERT_EQ(expected, result);
 }
 
