@@ -72,14 +72,14 @@ vector<int> list_node_to_array(ListNode* list)
 class test_fixture_2 : public ::testing::TestWithParam<tuple<vector<int>, vector<int>, vector<int>>>
 {
 protected:
-    Solution sut;
+    Solution sut; // system under test (SUT) 待測物件
 };
 
 
 // Test Method
-TEST_P(test_fixture_2, Problem2)
+TEST_P(test_fixture_2, solve_test)
 {
-    // given
+    // given 測資
     auto params = GetParam();
     vector<int> arr1 = get<0>(params);
     vector<int> arr2 = get<1>(params);
@@ -88,11 +88,11 @@ TEST_P(test_fixture_2, Problem2)
     auto l1 = array_to_list_node(arr1);
     auto l2 = array_to_list_node(arr2);
 
-    // when
+    // when 執行 solution
     auto result = sut.addTwoNumbers(l1, l2);
     auto resultArr = list_node_to_array(result);
 
-    // then
+    // then 驗證結果正確
     EXPECT_EQ(expectedArr, resultArr);
 }
 
